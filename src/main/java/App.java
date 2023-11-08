@@ -10,8 +10,14 @@ public class App {
         System.out.println(bean.getMessage());
         HelloWorld newBeanHello =
                 (HelloWorld) applicationContext.getBean("helloworld");
-        Cat cat = (Cat) applicationContext.getBean("cat");
-        Cat otherCat = (Cat) applicationContext.getBean("cat");
+        CatInterface cat = applicationContext.getBean(CatInterface.class);
+        CatInterface otherCat = applicationContext.getBean(CatInterface.class);
+        cat.setMeow("Meow-Meow");
+        cat.sayMeow();
+        cat.printRepeat();
+        otherCat.setMeow("Vlad -- Nigga");
+        otherCat.sayMeow();
+        otherCat.printRepeat();
         System.out.println(bean.equals(newBeanHello));
         System.out.println(cat.equals(otherCat));
     }

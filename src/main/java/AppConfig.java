@@ -11,6 +11,17 @@ public class AppConfig {
         helloWorld.setMessage("Hello World!");
         return helloWorld;
     }
+
+    @Bean
+    public InjectRandomIntAnnotationBeanPostProcessor injectRandomIntAnnotationBeanPostProcessor() {
+        return new InjectRandomIntAnnotationBeanPostProcessor();
+    }
+
+    @Bean
+    public ProfilingHandlerBeanPostProcessor profilingHandlerBeanPostProcessor() {
+        return new ProfilingHandlerBeanPostProcessor();
+    }
+
     @Bean(name="cat")
     @Scope("prototype")
     public Cat getMeow() {
